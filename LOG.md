@@ -2,7 +2,7 @@
 
 ## Entries by date with information on updates
 
-*5/24/2021*\
+*5/24/2021* \
 ##### Updates
 Started GustWord repo. Added README and UpdateCityIds files.
 
