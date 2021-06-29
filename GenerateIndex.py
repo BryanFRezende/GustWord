@@ -2,14 +2,24 @@ def gen_random_index():
     city_id_arr = load('CityIdArray.npy')
     #print(city_id_arr[0])
 
+    appid = "1234567890abcdefgh" #Enter your API key for appid
+
     index = []
     for i in range(0,6):
         rand1 = np.random.choice(city_id_arr)
         rand2 = np.random.choice(city_id_arr)
         #print(rand1,rand2)
 
-        get1 = requests.get("http://api.openweathermap.org/data/2.5/weather?id="+str(rand1)+"&appid=0b883368ad98922cf7b36a2c5b0be3a4")
-        get2 = requests.get("http://api.openweathermap.org/data/2.5/weather?id="+str(rand2)+"&appid=0b883368ad98922cf7b36a2c5b0be3a4")
+        get1 = requests.get(
+            "http://api.openweathermap.org/data/2.5/weather?id="
+            +str(rand1)
+            +"&appid="
+            +appid)
+        get2 = requests.get(
+            "http://api.openweathermap.org/data/2.5/weather?id="
+            +str(rand2)
+            +"&appid="
+            +appid)
 
         full1 = get1.json()
         full2 = get2.json()
