@@ -30,3 +30,18 @@ Started GustWord repo. Added README and UpdateCityIds files.
 
 ##### To-do
 * Add the technical info. Maybe just comment the lines in the code instead of putting in the README.
+---
+
+*6/29/2021*
+##### Updates
+* Modified the GenerateIndex script to only return indices within the bounds of the dictionary
+  * This was kind of "hard-coded", it would be nice to update this so that any updates to the number of dictionary entries are automatically accounted for in the index range.
+* Discovered the results from chosen method don't follow a uniform distribution!
+  * I decided to run the script 1000 times in a slightly modified way. I constrained the possible resulting numbers to 1-9 and populated a list with results, then plotted a histogram.
+  * It seems like the distribution is exponential, or maybe it follows Benford's rule, I'm not sure.
+  * The partial fix was to use the built-in random function to choose whether the number would be itself or 10 minus the number generated. This resulted in a more uniform distribution but with two clear peaks.
+  * After running a couple of Runs Tests I found from two different sources, it seems like the numbers are still random. There is probably room for improvement but I'm not exactly sure at this moment.
+
+##### To-do
+* Find more reliable ways of testing the "randomness" of the generated numbers.
+* Push the updates to GitHub
