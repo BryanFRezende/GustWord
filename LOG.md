@@ -45,3 +45,19 @@ Started GustWord repo. Added README and UpdateCityIds files.
 ##### To-do
 * Find more reliable ways of testing the "randomness" of the generated numbers.
 * Push the updates to GitHub
+---
+
+*7/11/2021*
+##### Updates
+* Consolidated functions into Jupyter Notebook titled "Modules.ipynb".
+  * Contains all functions, libraries, and inputs needed to generate a password.
+  * Proof of concept at the bottom. Ten passwords were generated and output.
+
+##### To-do
+* Still need to test randomness better.
+* Still need to talk in more technical detail about the generation works.
+* The password generating functions have a few bugs:
+  * Some words have spaces and hyphens.
+  * There is no capitalization function.
+  * There is no special characters function.
+---
