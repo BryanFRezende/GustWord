@@ -20,3 +20,20 @@ Voila! That constitutes a truly random password which should be relatively easy 
 
 Given that I will have the competency/help to finish it...The last stage will use natural language processing to weave a story together that helps the user remember the password even better.
 
+
+### Please comment!
+
+I am by no means an expert coder, so please take a look at my scripts and see if you can offer any suggestions. As of now it takes about 10 seconds on average to generate a password—that could certainly be improved. Also, if you know how to run a test to check randomness other than the Runs Test found from GeeksForGeeks, please share the link or info.
+
+#### Please include sources if applicable.
+
+The interesting stuff is in the "Modules.ipynb" Jupyter Notebook. "GenerateIndex.py" is outdated at this point, I will probably toss it soon. "UpdateCityIds.py" creates and updates a list of all the city ids used to randomly get wind speed and direction. "LOG.md" is a log of work by date.
+
+### More about the method
+
+To get a truly random word, I'm generating truly random numbers, creating an index from them, then looking up that index in a dictionary. I saw this idea in [an article online where you roll the dice to provide the truly random digits](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/) and generate your password. I'm just substituting wind vectors for dice rolls and using a longer dictionary (which may have to change—we'll see). The wind to digit process is as follows:
+1. Get wind vectors from two pseudo-randomly chosen cities
+2. Take their dot products and cross products
+3. Take the sum of the two products
+4. If the number is below 10 the first digit is the number, if not it's divided by a pseudo-random number until it is below 10.
+5. The numbers, even before dividing, demonstrate an exponential distribution so I added a block to pseudo-randomly either leave the digit as is or make it 10 minus itself.

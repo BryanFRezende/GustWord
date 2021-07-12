@@ -63,3 +63,8 @@ Started GustWord repo. Added README and UpdateCityIds files.
   * There is no capitalization function.
   * There is no special characters function.
 ---
+
+*7/12/2021*
+##### Updates
+* Updated README with details about files and digit generation
+---
