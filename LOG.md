@@ -54,6 +54,8 @@ Started GustWord repo. Added README and UpdateCityIds files.
   * Proof of concept at the bottom. Ten passwords were generated and output.
 
 ##### To-do
+* Add dictionary updater module.
+  * Add both dictionary and city id updater modules to the Modules notebook.
 * Still need to test randomness better.
 * Still need to talk in more technical detail about the generation works.
 * The password generating functions have a few bugs:
