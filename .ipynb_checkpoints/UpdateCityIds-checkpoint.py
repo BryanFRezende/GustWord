@@ -6,9 +6,15 @@
 
 # Import the relevant libraries
 import json
+import requests
 import numpy as np
 from numpy import save
 from numpy import load
+
+# Pull a current version of the city list
+cityZipLink = "http://bulk.openweathermap.org/sample/city.list.json.gz"
+currentCities = requests.get(cityZipLink)
+
 
 # Open the file and load JSON contents to 'cities' object
 with open("/home/jovyan/Personal/PassGen/wthrdata/citylist.json",'r') as cities_file:
@@ -26,3 +32,4 @@ city_array = np.array(city_id_list)
 
 # Save array as .npy for fast loading
 save('CityIdArray.npy', city_array)
+

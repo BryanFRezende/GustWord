@@ -6,19 +6,25 @@
 
 # Import the relevant libraries
 import json
+import requests
+import gzip
 import numpy as np
 from numpy import save
 from numpy import load
 
+# Pull a current version of the city list
+cityZipLink = "http://bulk.openweathermap.org/sample/city.list.json.gz"
+currentCities = requests.get(cityZipLink)
+
 # Open the file and load JSON contents to 'cities' object
-with open("/home/jovyan/Personal/PassGen/wthrdata/citylist.json",'r') as cities_file:
-    cities = json.load(cities_file)
+unzippedCities = gzip.decompress(currentCities.content)
+rawCities = json.loads(unzippedCities.decode('utf-8'))
 
 # Create an empty list to populate with IDs
 city_id_list = []
 
 # Loop through each of the city records and just return the ID number, appending each ID to the list
-for city in cities:
+for city in rawCities:
     city_id_list.append(city['id'])
 
 # Convert the list to a numpy array
@@ -26,3 +32,4 @@ city_array = np.array(city_id_list)
 
 # Save array as .npy for fast loading
 save('CityIdArray.npy', city_array)
+
