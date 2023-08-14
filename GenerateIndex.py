@@ -2,7 +2,9 @@ def gen_random_index():
     city_id_arr = load('CityIdArray.npy')
     #print(city_id_arr[0])
 
-    appid = "1234567890abcdefgh" #Enter your API key for appid
+    #appid = "1234567890abcdefgh" #Enter your API key for appid
+    with open('.apikey', 'r', encoding="utf-8") as f:
+        appid = f.readlines()[1]
 
     index = []
     for i in range(0,6):
